@@ -1,0 +1,132 @@
+body {
+ position: absolute ;
+ left: 0;
+ right: 0;
+ top: 0;
+ bottom: 0;
+ padding: 0;
+ margin: 0;
+ overflow: hidden ;
+}
+
+.workspace .sidebar {
+ position: absolute;
+ left:  0;
+ top:  0;
+ width: 200px;
+ bottom: 900px;
+}
+
+.workspace .sidebar .office_detail {
+ position: absolute;
+ left:  0;
+ top:  0px;
+ right: 0;
+ bottom: 0;
+ overflow: visible ;
+ font-size: 14px;
+ background: #A0B0B0;
+}
+
+.workspace .sidebar .office_list {
+ position: absolute;
+ left:  0;
+ top:  20px;
+ right: 0;
+ bottom: 200px;
+ overflow: visible ;
+}
+
+.workspace .sidebar .family_detail {
+ position: absolute;
+ left:  0;
+ top:  200px;
+ right: 0;
+ bottom: 0;
+ overflow: visible ;
+ font-size: 14px;
+ background: #A0B0B0;
+}
+
+.workspace .sidebar .family_list {
+ position: absolute;
+ left:  0;
+ top:  220px;
+ right: 0;
+ bottom: 0;
+ overflow: visible ;
+}
+
+.workspace .sidebar .friends_detail {
+ position: absolute;
+ left:  0;
+ top:  400px;
+ right: 0;
+ bottom: 0;
+ overflow: visible ;
+ font-size: 14px;
+ background: #A0B0B0;
+}
+
+.workspace .sidebar .friends_list {
+ position: absolute;
+ left:  0;
+ top:  420px;
+ right: 0;
+ bottom: 0;
+ overflow: visible ;
+}
+
+.workspace .sc-split-divider-view {
+ position: absolute;
+ left: 500px;
+ top: 0;
+ bottom: 0;
+}
+
+.workspace .detail_view {
+ position: absolute;
+ left: 205px;
+ right: 0;
+ top: 0;
+ bottom: 0;
+ border: none ;
+ background-color: #CCA;
+}
+
+.workspace .detail_view .card-detail {
+ margin-left: auto;
+ margin-right: auto;
+ top: 150px;
+ position: relative;
+ border: 4px #888 solid;
+ background: #A0B0B0;
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+.workspace .detail_view .label_detail {
+ position: absolute;	
+ left: 500px;
+ top: 30px;
+ height: 30px;
+ width: 300px;
+ font-size: 24px;
+}
+
+.workspace .detail_view .card-detail td {
+ padding: 0 30px;
+}
+
+.workspace .detail_view .card-detail .buttons {
+ text-align: right;
+ padding-top: 10px;
+}
+
+.workspace .detail_view .card-detail input {
+ font-size: 14px;
+ width: 400px;
+}
+
+
+

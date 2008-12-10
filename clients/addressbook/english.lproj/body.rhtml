@@ -1,0 +1,133 @@
+<% content_for('body') do %>
+
+<% split_view :workspace, :class => 'sc-app-workspace', :direction => :horizontal do %>
+ <% view :sidebar, :outlet => true do %>
+  <%= label_view :office_detail, :editable => false, :value => "Office Contacts" %>
+  <% scroll_view :office_list, :outlet => true do %>
+	<%= list_view :outlet => true,
+      :content_value_key => 'getWorkContacts',
+      :bind => {
+        :content => 'Addressbook.masterController.arrangedObjects',
+        :selection => 'Addressbook.masterController.selection'
+      } %>
+  <% end %>
+  <%= label_view :family_detail, :editable => false, :value => "Family Contacts" %>
+  <% scroll_view :family_list, :outlet => true do %>
+    <%= list_view :outlet => true,
+      :content_value_key => 'getFamilyContacts',
+      :bind => {
+        :content => 'Addressbook.masterController.arrangedObjects',
+        :selection => 'Addressbook.masterController.selection'
+      } %>
+  <% end %>
+  <%= label_view :friends_detail, :editable => false, :height => 20, :value => "Friends Contacts" %>
+  <% scroll_view :friends_list, :outlet => true do %>
+    <%= list_view :outlet => true,
+      :content_value_key => 'getFriendsContacts',
+      :bind => {
+        :content => 'Addressbook.masterController.arrangedObjects',
+        :selection => 'Addressbook.masterController.selection'
+      } %>
+  <% end %>
+<% end %>
+
+  <%= split_divider_view :outlet => true, :width => 10 %>
+
+  <% view :detail_view, :outlet => true do %>
+
+	<%= label_view :label_detail, :editable => false, :value => "Address Book Application" %>
+    <table class="card-detail">
+      <tr>
+        <td><label>First Name:</label></td>
+        <td>
+          <%= text_field_view :outlet => true, :hint => "First Name",
+            :bind => {
+              :value => 'Addressbook.detailController.firstName'
+            } %>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label>Last Name:</label></td>
+        <td>
+          <%= text_field_view :outlet => true, :hint => "Last Name",
+            :bind => {
+              :value => 'Addressbook.detailController.lastName'
+            } %>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label>Phone Number:</label></td>
+        <td>
+          <%= text_field_view :outlet => true, :hint => "phonenumber",
+            :bind => {
+              :value => 'Addressbook.detailController.phonenumber'
+            } %>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label>Email:</label></td>
+        <td>
+          <%= text_field_view :outlet => true, :hint => "email",
+            :bind => {
+              :value => 'Addressbook.detailController.email'
+            } %>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label>Address:</label></td>
+        <td>
+          <%= text_field_view :outlet => true, :hint => "address",
+            :bind => {
+              :value => 'Addressbook.detailController.address'
+            } %>
+        </td>
+      </tr>
+	  
+	  <tr>
+        <td><label>Group ID:</label></td>
+        <td>
+          <%= text_field_view :outlet => true, :hint => "classid",
+            :bind => {
+              :value => 'Addressbook.detailController.classid'
+            } %>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2" class="buttons">
+          <%= button_view :outlet => true,
+            :title => "Cancel",
+            :action => 'Addressbook.detailController.discardChanges',
+            :bind => {
+              :enabled => 'Addressbook.detailController.hasChanges'
+            } %>
+          <%= button_view :outlet => true,
+            :title => "Save Changes", :default => true,
+            :action => 'Addressbook.detailController.commitChanges',
+            :bind => {
+              :enabled => "Addressbook.detailController.hasChanges"
+            } %>
+		  <%= button_view :outlet => true,
+	        :title => "Add Contact", :default => true,
+	        :action => 'Addressbook.detailController.createRecord',
+	        :bind => {
+            :enabled => "Addressbook.detailController.hasChanges"
+           } %>
+		  <%= button_view :outlet => true,
+	        :title => "Delete Contact", :default => true,
+	        :action => 'Addressbook.detailController.deleteRecord',
+	        :bind => {
+            :enabled => "Addressbook.detailController.hasContent"
+           }  %>
+        </td>
+      </tr>
+    </table>
+
+  <% end %>
+<% end %>
+
+<% end %>
